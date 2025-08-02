@@ -2,9 +2,9 @@ name: Audit
 
 on:
   push:
-    branches: [grpc_demon]
+    branches: [main]
   pull_request:
-    branches: [grpc_demon]
+    branches: [main]
 
 jobs:
 
