@@ -1,8 +1,6 @@
-module github.com/gvv001/grpc_demon
+module grpc_demon
 
-go 1.23.0
-
-toolchain go1.23.11
+go 1.23.11
 
 require (
 	google.golang.org/grpc v1.74.2

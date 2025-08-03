@@ -10,32 +10,31 @@ import (
 	"grpc_demon/storage"
 )
 
-//тестируем загрузку конфига метрик
+// тестируем загрузку конфига метрик
 func TestLoadConfig(t *testing.T) {
 	if _, err := model.LoadConfig("../config/metrics.yaml"); err != nil {
 		log.Fatal(err)
 	}
 }
 
-//тестируем инициализацию метрик
+// тестируем инициализацию метрик
 func TestMetricsInit(t *testing.T) {
 	if _, err := model.MetricsInit("../config/metrics.yaml"); err != nil {
 		log.Fatal(err)
 	}
 }
 
-//тестируем работу метрики
+// тестируем работу метрики
 func TestMetricsGetValue(t *testing.T) {
 
 	metric := &model.Metric{
 		Name:        "Load avg. (%)",
 		Cache:       &storage.Cache{},
 		Cmd:         "cat",
-		CmdParams:   "/proc/loadavg",
-		ParseParams: "{print $1}",
+		CmdParams:   "/proc/loadavg", //nolint:
+		ParseParams: "{print $1}",    //nolint:
 		IsActive:    true,
 	}
-
 
 	stringValue, err := metric.GetValue()
 	if err != nil {
