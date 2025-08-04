@@ -8,7 +8,7 @@ LinuxMetrics:
  -
     name: "Cpu load (%)"
     cmd: "top"
-    cmdParams: "-b"
+    cmdParams: "-bn1"
     parseParams: '$1=="%Cpu(s):"{print $2}'
     isActive: false
 

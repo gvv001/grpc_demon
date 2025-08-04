@@ -3,7 +3,7 @@ name: Otus diplom gRPC demon
 on:
   push:
     branches:
-      - main
+      - grpc_demon
 
 env:
   GO111MODULE: "on"
