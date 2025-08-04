@@ -10,6 +10,9 @@ generate:
 
 	GOOS=linux GOARCH=386 go build -o bin/grpc_server_linux.exe main.go
 	GOOS=linux GOARCH=386 go build -o ./bin/grpc_client_linux.exe client/client.go
+    
+	mkdir bin/config
+	cp config/metrics.yaml bin/config
 
 	sudo docker rmi grpc_demon
 	sudo docker build -t grpc_demon .

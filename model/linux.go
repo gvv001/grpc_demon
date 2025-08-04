@@ -111,7 +111,8 @@ func (m Metric) GetValue() (string, error) {
 
 	// удаляем символы \n \r и прочее
 	value := strings.TrimSpace(string(parseRes))
-
+	value = strings.ReplaceAll(value, "%", "")
+	
 	return value, nil
 }
 
